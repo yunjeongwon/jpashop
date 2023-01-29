@@ -42,13 +42,21 @@ public class OrderService {
         orderRepository.save(order);
         return order.getId();
     }
-    //취소
-//    public void cancelOrder(Order order) {
-//    }
-    //검색
-    public Order findOrder(Long orderId) {
-        return orderRepository.findOne(orderId);
+
+    //주문 취소
+    public void cancelOrder(Long orderId) {
+        
+        //주문 엔티티 조회
+        Order order = orderRepository.findOne(orderId);
+        
+        //주문 취소
+        order.cancel();
     }
+
+    //검색
+//    public Order findOrder(OrderSearch orderSearch) {
+//        return orderRepository.findAll(orderSearch);
+//    }
 
 //    public List<Order> findOrders() {
 //        return orderRepository.findAll();

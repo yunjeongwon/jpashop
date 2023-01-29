@@ -23,8 +23,7 @@ public class ItemServiceTest {
 
     @Autowired EntityManager em;
     @Autowired ItemService itemService;
-    @Autowired
-    ItemRepository itemRepository;
+    @Autowired ItemRepository itemRepository;
     @Test
     @Rollback(value = false)
     public void 상품_등록() throws Exception {

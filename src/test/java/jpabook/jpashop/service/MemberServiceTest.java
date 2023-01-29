@@ -18,9 +18,10 @@ import static org.junit.Assert.*;
 @Transactional
 public class MemberServiceTest {
 
+    @Autowired EntityManager em;
     @Autowired MemberService memberService;
     @Autowired MemberRepository memberRepository;
-    @Autowired EntityManager em;
+
 
     @Test
     public void 회원가입() throws Exception {
